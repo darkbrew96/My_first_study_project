@@ -24,4 +24,9 @@ public class Expectant {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(elementLocator));
     }
+
+    public void waitingFrameAndSwitchToIt (By frameLocator) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
+        webDriverWait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));
+    }
 }
