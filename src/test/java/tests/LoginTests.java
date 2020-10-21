@@ -1,10 +1,12 @@
+package tests;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import ru.stormnet.yandex.pages.LoginPage;
-import ru.stormnet.yandex.pages.MailPage;
-import ru.stormnet.yandex.pages.SearchPage;
+import ru.stormnet.yandex.pages.loginPageEnvironment.LoginPage;
+import ru.stormnet.yandex.pages.mailPageEnvironment.MailPage;
+import ru.stormnet.yandex.pages.SearchPageEnvironment.SearchPage;
 import ru.stormnet.yandex.utills.PropertiesManager;
 
 
@@ -25,7 +27,7 @@ public class LoginTests extends AbstractTest {
         loginPage.loginWithCreeds(username, password);
 
         MailPage mailPage = new MailPage(driver);
-        Assert.assertTrue(mailPage.isOpened(),"Mail page is not open!");//добавить месэдж о провале
+        Assert.assertTrue(mailPage.isOpened(), "Unsuccessful page opening!");
     }
 
     @Test
@@ -36,6 +38,6 @@ public class LoginTests extends AbstractTest {
         loginPage.loginWithCreeds(username, password);
 
         MailPage mailPage = new MailPage(driver);
-        Assert.assertFalse(mailPage.isOpened(), "Mail page is open!");
+        Assert.assertFalse(mailPage.isOpened(), "Unsuccessful page opening");
     }
 }
