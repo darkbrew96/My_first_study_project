@@ -1,9 +1,9 @@
-package ru.stormnet.yandex.pages;
+package ru.stormnet.yandex.pages.SearchPageEnvironment;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import ru.stormnet.yandex.pages.AbstractPage;
 import ru.stormnet.yandex.utills.Expectant;
-
 
 import java.util.Set;
 
@@ -18,7 +18,7 @@ public class SearchPage extends AbstractPage {
         super(driver);
     }
 
-    public void goToLoginPage() {//возвратить логинпэйдж
+    public void goToLoginPage() {
         Set<String> handle1 = driver.getWindowHandles();
         expectant.waitingForAnElementOnThePage(cssSelector(".desk-notif-card__card a.button"));
         WebElement loginButton = driver.findElement(cssSelector(".desk-notif-card__card a.button"));
