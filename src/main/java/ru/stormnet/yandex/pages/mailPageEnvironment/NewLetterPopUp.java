@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stormnet.yandex.pages.AbstractPage;
 import ru.stormnet.yandex.pages.mailPageEnvironment.MailPage;
 import ru.stormnet.yandex.utills.Expectant;
+import ru.stormnet.yandex.utills.FileManager;
 import ru.stormnet.yandex.utills.PropertiesManager;
 
 public class NewLetterPopUp extends MailPage {
@@ -35,7 +36,7 @@ public class NewLetterPopUp extends MailPage {
 
     public void attachFileToMessage() {
         WebElement fileInput = driver.findElement(FILE_INPUT_LOCATOR);
-        fileInput.sendKeys(PropertiesManager.getProperty("absolute_path_to_the_file"));
+        fileInput.sendKeys(FileManager.createFile().getAbsolutePath());
     }
 
     public void sendMessageToRecipient() {
