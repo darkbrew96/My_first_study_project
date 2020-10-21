@@ -34,7 +34,6 @@ public class YandexMailFunctionalTests extends AbstractTest {
     public void yandexMailFunctionalTest() {
         MailPage mailPage = new MailPage(driver);
         NewLetterPopUp newLetterPopUp = new NewLetterPopUp(driver);
-        FileManager.createFile();
         mailPage.openLetterPop_Up();
         newLetterPopUp.enterAddress();
         Assert.assertTrue(newLetterPopUp.allFileIsAttached(), "Failed to file attachments");
