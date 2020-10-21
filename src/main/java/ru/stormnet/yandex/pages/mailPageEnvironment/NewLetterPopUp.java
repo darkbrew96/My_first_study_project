@@ -1,4 +1,4 @@
-package ru.stormnet.yandex.pages;
+package ru.stormnet.yandex.pages.mailPageEnvironment;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.stormnet.yandex.pages.AbstractPage;
+import ru.stormnet.yandex.pages.mailPageEnvironment.MailPage;
 import ru.stormnet.yandex.utills.Expectant;
 import ru.stormnet.yandex.utills.PropertiesManager;
 
@@ -20,13 +22,15 @@ public class NewLetterPopUp extends MailPage {
     }
 
 
-    public WebElement getAddress() {
+    private WebElement getAddress() {
         new Expectant(driver).waitingForAnElementOnThePage(FILE_RECIPIENT_ADDRESS_FIELD_LOCATOR);
         return driver.findElement(FILE_RECIPIENT_ADDRESS_FIELD_LOCATOR);
     }
 
     public void enterAddress() {
         getAddress().sendKeys(PropertiesManager.getProperty("file_recipient_address"));
+        AbstractPage.logger.info("address is entered!");
+
     }
 
     public void attachFileToMessage() {
@@ -37,14 +41,17 @@ public class NewLetterPopUp extends MailPage {
     public void sendMessageToRecipient() {
         new Expectant(driver).waitingForAnElementOnThePage(By.cssSelector("div.ComposeSendButton_desktop > button"));
         driver.findElement(By.cssSelector("div.ComposeSendButton_desktop > button")).click();
+        AbstractPage.logger.info("message sended to recipient!");
     }
 
     public boolean allFileIsAttached() {
         try {
             (new WebDriverWait(driver, 10)).until(ExpectedConditions.invisibilityOfElementLocated(LOADING_BAR_LOCATOR));
+            AbstractPage.logger.info("all file is attached!");
             return true;
         } catch (TimeoutException ex) {
             System.out.println(ex.getMessage());
+            AbstractPage.logger.info("Failed to file attachments");
             return false;
         }
     }
