@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
 public class Expectant {
 
     protected WebDriver driver;
@@ -25,7 +24,7 @@ public class Expectant {
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(elementLocator));
     }
 
-    public void waitingFrameAndSwitchToIt (By frameLocator) {
+    public void waitingFrameAndSwitchToIt(By frameLocator) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
         webDriverWait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));
     }
