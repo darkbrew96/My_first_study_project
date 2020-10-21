@@ -48,7 +48,6 @@ public class YandexMailFunctionalTests extends AbstractTest {
         MailPage mailPage = new MailPage(driver);
         NewLetterPopUp newLetterPopUp = new NewLetterPopUp(driver);
         YandexDiscPage yandexDiscPage = new YandexDiscPage(driver);
-        FileManager.createFile();
         mailPage.openLetterPop_Up();
         newLetterPopUp.enterAddress();
         newLetterPopUp.attachFileToMessage();
