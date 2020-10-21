@@ -1,6 +1,8 @@
 package ru.stormnet.yandex.utills;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesManager {
