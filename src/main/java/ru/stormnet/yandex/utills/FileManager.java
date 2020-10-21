@@ -10,9 +10,9 @@ import java.io.File;
 public class FileManager {
     public static final Logger logger = LogManager.getLogger(AbstractPage.class);
 
-    public static void createFile() {
+    public static File createFile() {
+        File f = new File(PropertiesManager.getProperty("path_to_the_file"));
         try {
-            File f = new File(PropertiesManager.getProperty("path_to_the_file"));
             if (f.createNewFile())
                 logger.info("file is created!");
             else
@@ -20,6 +20,7 @@ public class FileManager {
         } catch (Exception e) {
             logger.info(e);
         }
+       return f;
     }
 
     public static void deleteFile() {
