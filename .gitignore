@@ -1,0 +1,15 @@
+# JetBrains IDE
+.idea/
+*.iml
+
+# Allure Results
+allure-results/
+
+# Log files
+*.log
+
+# Maven Folder
+target/
+
+# Folder With Created Files For Tests
+fileFolder
