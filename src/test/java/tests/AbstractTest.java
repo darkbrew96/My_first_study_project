@@ -16,15 +16,18 @@ public class AbstractTest {
     @BeforeMethod
 
     public void setupForTests(ITestContext context) {
+        logger.info("preparation for the start of the test...");
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get(PropertiesManager.getProperty("search_page_url"));
         context.setAttribute("driver", driver);
+        logger.info("test start!");
     }
 
     @AfterMethod
     public void afterTheEndOfTheTests() {
         driver.close();
         driver.quit();
+        logger.info("test finish!");
     }
 }
