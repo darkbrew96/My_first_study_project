@@ -45,7 +45,7 @@ public class MailPage extends AbstractPage {
     public void goToYandexDiscPage() {
         Set<String> handle1 = driver.getWindowHandles();
         new Expectant(driver).waitingFrameAndSwitchToIt(DISC_WIDGET_SAVE_LOCATOR);
-        Assert.assertTrue(fileSavedToYandexDisc(), "Failed of saved file to Yandex Disc");
+        Assert.assertTrue(fileSavedToYandexDisc(), "***Failed of saved file to Yandex Disc***");
         new Expectant(driver).waitingForAnElementOnThePage(OPEN_DISC_BUTTON_LOCATOR);
         driver.findElement(OPEN_DISC_BUTTON_LOCATOR).click();
         Set<String> handle2 = driver.getWindowHandles();
