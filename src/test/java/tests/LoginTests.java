@@ -4,9 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import ru.stormnet.yandex.pages.SearchPageEnvironment.SearchPage;
 import ru.stormnet.yandex.pages.loginPageEnvironment.LoginPage;
 import ru.stormnet.yandex.pages.mailPageEnvironment.MailPage;
-import ru.stormnet.yandex.pages.SearchPageEnvironment.SearchPage;
 import ru.stormnet.yandex.utills.PropertiesManager;
 
 
